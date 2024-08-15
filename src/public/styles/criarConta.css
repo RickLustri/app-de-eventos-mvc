@@ -20,7 +20,7 @@ body {
 }
 
 .container {
-  background-color: #303030e1;
+  background-color: #3030309d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,6 +65,9 @@ input {
   background-color: #69696900;
   font-size: 11px;
   color: #fff;
+}
+input::placeholder{
+  color: #cecece;
 }
 
 button {

@@ -7,6 +7,8 @@ const enableHotReload = require("./hot-reload");
 // Puxando os controladores da aplicação
 const loginControllers = require("./controllers/loginController");
 const cadastroControllers = require("./controllers/cadastroController");
+const eventosControllers = require("./controllers/eventoController");
+const homeControllers = require("./controllers/homeController");
 
 // Chamando o express
 const app = express();
@@ -27,8 +29,11 @@ app.use(express.static(path.join(__dirname, "public")));
 enableHotReload(app);
 
 // Rotas das paginas
-app.get("/", loginControllers.exibirPaginaLogin);
+app.get("/", homeControllers.exibirPaginaHome);
+app.get("/login", loginControllers.exibirPaginaLogin);
 app.get("/criar-conta", cadastroControllers.exibirCriarConta);
+app.get("/eventos", eventosControllers.exibirPaginaEventos);
+app.get("/criar-evento", eventosControllers.exibirPaginaCriarEventos);
 
 // Inicie o servidor
 const port = 3000;
