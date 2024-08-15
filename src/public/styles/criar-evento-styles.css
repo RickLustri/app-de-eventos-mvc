@@ -28,6 +28,15 @@ body {
    
 }
 
+.formulario{
+  height: 630px;
+  background: #fff;
+  margin-top: 90px;
+  border-radius: 20px;
+  padding: 80px 80px;
+  box-shadow: 6px 10px 10px #0000002f;
+}
+
 .titulo {
   font-size: 36px;
   color: #fff;
@@ -39,4 +48,50 @@ small {
   color: #42d3ff;
   font-size: 16px;
 }
+
+.subtitulo{
+  font-size: 30px;
+  font-weight: 700;
+  
+}
+
+form{
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+label{
+  font-size: 17px;
+  color: #3d3d3d;
+  margin-left: 3px;
+  margin-bottom: 2px;
+}
+
+input{
+  height: 50px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  border: 1px solid #b9b9b9;
+  padding: 15px;
+}
+
+input:focus{
+  outline: #53ff43;
+  border: 1px solid #53ff43;
+}
+
+button{
+  height: 50px;
+  border: none;
+  background-color: #53ff43;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
 
