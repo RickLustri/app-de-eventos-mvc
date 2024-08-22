@@ -6,4 +6,8 @@ function exibirPaginaCriarEventos(request, response) {
   response.render('criarEvento');
 }
 
-module.exports = { exibirPaginaEventos, exibirPaginaCriarEventos }
+function criarEvento(request, response) {
+  console.log(request.body);
+}
+
+module.exports = { exibirPaginaEventos, exibirPaginaCriarEventos, criarEvento }

@@ -28,12 +28,21 @@ app.use(express.static(path.join(__dirname, "public")));
 // Habilitar hot-reload
 enableHotReload(app);
 
+
 // Rotas das paginas
 app.get("/", homeControllers.exibirPaginaHome);
+
 app.get("/login", loginControllers.exibirPaginaLogin);
 app.get("/criar-conta", cadastroControllers.exibirCriarConta);
+
 app.get("/eventos", eventosControllers.exibirPaginaEventos);
 app.get("/criar-evento", eventosControllers.exibirPaginaCriarEventos);
+
+
+// Rotas de dados
+app.post("/criar-evento", eventosControllers.criarEvento);
+app.post("/criar-conta", cadastroControllers.criarConta);
+
 
 // Inicie o servidor
 const port = 3000;

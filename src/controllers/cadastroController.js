@@ -3,4 +3,8 @@ function exibirCriarConta(request, response) {
   response.render('criarConta');
 }
 
-module.exports = { exibirCriarConta };
+function criarConta(request, response) {
+  console.log(request.body);
+}
+
+module.exports = { exibirCriarConta, criarConta };
