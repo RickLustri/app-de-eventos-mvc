@@ -34,14 +34,11 @@ app.get("/", homeControllers.exibirPaginaHome);
 
 app.get("/login", loginControllers.exibirPaginaLogin);
 app.get("/criar-conta", cadastroControllers.exibirCriarConta);
+app.post("/criar-usuario", cadastroControllers.adicionarUsuario);
 
 app.get("/eventos", eventosControllers.exibirPaginaEventos);
 app.get("/criar-evento", eventosControllers.exibirPaginaCriarEventos);
-
-
-// Rotas de dados
 app.post("/criar-evento", eventosControllers.criarEvento);
-app.post("/criar-conta", cadastroControllers.criarConta);
 
 
 // Inicie o servidor
