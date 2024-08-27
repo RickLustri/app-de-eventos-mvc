@@ -1,3 +1,6 @@
+// importando as dependências
+const md5 = require('md5');
+
 const usuarios = [];
 
 function adicionarUsuario(nome, email, senha) {
@@ -5,7 +8,7 @@ function adicionarUsuario(nome, email, senha) {
     id: usuarios.length + 1,
     nome: nome,
     email: email,
-    senha: senha,
+    senha: md5(senha),
     criadoEm: new Date()
   })
 
