@@ -13,7 +13,7 @@ function adicionarUsuario(nome, email, senha) {
       console.log('Usário criado com sucesso!')
     })
     .catch((erro) => {
-      console.error('Erro ao inserir dados', erro)
+      console.error('Erro ao inserir dados, ', erro)
     })
 }
 

@@ -1,14 +1,17 @@
-const eventos = [];
+const bancoDeDados = require('../config/bancoDeDados');
 
 function adicionarEvento(titulo, local, data) {
-  eventos.push({
-    id: eventos.length + 1,
-    titulo: titulo,
-    local: local,
-    data: data
-  })
-
-  console.log(eventos)
+ 
+  bancoDeDados.query(`
+    INSERT INTO eventos (titulo, localEvento, dataEvento, criadoEm)
+    VALUES ('${titulo}', '${local}', '${data}', now())
+    `)
+    .then( ()=> {
+      console.log('Evento criado com sucesso!');
+    })
+    .catch( (error) => {
+        console.error('Erro ao criar evento, ', error);
+    })
 }
 
-module.exports = { adicionarEvento }
+module.exports = { adicionarEvento, listarEventos }

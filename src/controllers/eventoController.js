@@ -4,6 +4,7 @@ const eventoModels = require('../models/EventoModel');
 // Criando o controlador de eventos
 function exibirPaginaEventos(request, response) {
   response.render('eventos');
+  
 }
 
 function exibirPaginaCriarEventos(request, response) {
