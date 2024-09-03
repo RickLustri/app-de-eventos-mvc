@@ -10,7 +10,7 @@ function adicionarUsuario(nome, email, senha) {
     VALUES ('${nome}', '${email}', '${md5(senha)}', now())
     `)
     .then(() => {
-      console.log('Usário criado com sucesso!')
+      console.log('Usuário criado com sucesso!')
     })
     .catch((erro) => {
       console.error('Erro ao inserir dados, ', erro)
