@@ -5,10 +5,10 @@ const bodyParser = require('body-parser');
 const enableHotReload = require("./hot-reload");
 
 // Puxando os controladores da aplicação
-const loginControllers = require("./controllers/loginController");
-const cadastroControllers = require("./controllers/cadastroController");
-const eventosControllers = require("./controllers/eventoController");
-const homeControllers = require("./controllers/homeController");
+const loginRoutes = require("./routes/loginRoutes");
+const cadastroRoutes = require("./routes/cadastroRoutes");
+const eventoRoutes = require("./routes/eventoRoutes");
+const homeRoutes = require("./routes/homeRoutes");
 
 // Chamando o express
 const app = express();
@@ -30,16 +30,10 @@ enableHotReload(app);
 
 
 // Rotas das paginas
-app.get("/", homeControllers.exibirPaginaHome);
-
-app.get("/login", loginControllers.exibirPaginaLogin);
-app.get("/criar-conta", cadastroControllers.exibirCriarConta);
-app.post("/criar-usuario", cadastroControllers.adicionarUsuario);
-
-app.get("/eventos", eventosControllers.exibirPaginaEventos);
-app.get("/criar-evento", eventosControllers.exibirPaginaCriarEventos);
-app.post("/criar-evento", eventosControllers.criarEvento);
-
+app.use('/', homeRoutes);
+app.use('/', loginRoutes);
+app.use('/', cadastroRoutes);
+app.use('/', eventoRoutes);
 
 // Inicie o servidor
 const port = 3000;

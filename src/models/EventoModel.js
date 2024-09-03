@@ -14,4 +14,4 @@ function adicionarEvento(titulo, local, data) {
     })
 }
 
-module.exports = { adicionarEvento, listarEventos }
+module.exports = { adicionarEvento }

@@ -1,5 +1,5 @@
 // Exportando os models
-const usuarioModels = require('../models/UsuarioModel');
+const usuarioModels = require('../models/usuarioModel');
 
 // Criando o controlador de cadastro
 function exibirCriarConta(request, response) {

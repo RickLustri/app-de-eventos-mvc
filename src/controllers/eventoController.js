@@ -1,5 +1,5 @@
 // Exportando os models
-const eventoModels = require('../models/EventoModel');
+const eventoModels = require('../models/eventoModel');
 
 // Criando o controlador de eventos
 function exibirPaginaEventos(request, response) {
