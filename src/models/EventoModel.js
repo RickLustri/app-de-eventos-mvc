@@ -1,5 +1,12 @@
 const bancoDeDados = require('../config/bancoDeDados');
 
+const eventos = [{
+  id: 1,
+  titulo: 'Futebol',
+  local: 'Centro',
+  data: '2024-09-10'
+}];
+
 function adicionarEvento(titulo, local, data) {
  
   bancoDeDados.query(`
@@ -14,4 +21,9 @@ function adicionarEvento(titulo, local, data) {
     })
 }
 
-module.exports = { adicionarEvento }
+function obterEventos() {
+  return eventos
+}
+
+
+module.exports = { adicionarEvento, obterEventos }
