@@ -17,4 +17,18 @@ function adicionarUsuario(nome, email, senha) {
     })
 }
 
-module.exports = { adicionarUsuario }
+async function buscarUsuarioPorEmail(email) {
+
+  const usuario = await bancoDeDados.query(`
+    SELECT * FROM usuarios WHERE email = '${email}'
+    `);
+
+  return usuario[0][0]
+}
+
+
+
+module.exports = {
+  adicionarUsuario,
+  buscarUsuarioPorEmail
+}
