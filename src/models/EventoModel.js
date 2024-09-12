@@ -1,16 +1,10 @@
 const bancoDeDados = require('../config/bancoDeDados');
 
-const eventos = [{
-  id: 1,
-  titulo: 'Futebol',
-  local: 'Centro',
-  data: '2024-09-10'
-}];
 
 function adicionarEvento(titulo, local, data) {
  
   bancoDeDados.query(`
-    INSERT INTO eventos (titulo, localEvento, dataEvento, criadoEm)
+    INSERT INTO eventos (titulo, local, data, criadoEm)
     VALUES ('${titulo}', '${local}', '${data}', now())
     `)
     .then( ()=> {
@@ -21,8 +15,14 @@ function adicionarEvento(titulo, local, data) {
     })
 }
 
-function obterEventos() {
-  return eventos
+async function obterEventos() {
+
+   const eventos = await bancoDeDados.query(`
+    SELECT * FROM eventos
+    `)
+
+    return eventos[0];
+
 }
 
 

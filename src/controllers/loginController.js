@@ -26,6 +26,7 @@ async function autenticarUsuario(request, response) {
     return;
   }
 
+  response.redirect('/eventos');
 }
 
 // Exportando o controlador de login
