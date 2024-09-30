@@ -2,12 +2,14 @@
 const md5 = require('md5');
 const bancoDeDados = require('../config/bancoDeDados');
 
-function adicionarUsuario(nome, email, senha) {
+function adicionarUsuario(nome, email, senha, cargo) {
 
+  cargo = "user"
+  
   // Adicionando o novo usuario
   bancoDeDados.query(`
-    INSERT INTO usuarios (nome, email, senha, criadoEm) 
-    VALUES ('${nome}', '${email}', '${md5(senha)}', now())
+    INSERT INTO usuarios (nome, email, senha, criadoEm, cargo) 
+    VALUES ('${nome}', '${email}', '${md5(senha)}', now(), '${cargo}')
     `)
     .then(() => {
       console.log('Usuário criado com sucesso!')
