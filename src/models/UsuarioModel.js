@@ -4,8 +4,6 @@ const bancoDeDados = require('../config/bancoDeDados');
 
 function adicionarUsuario(nome, email, senha, cargo) {
 
-  cargo = "user"
-  
   // Adicionando o novo usuario
   bancoDeDados.query(`
     INSERT INTO usuarios (nome, email, senha, criadoEm, cargo) 

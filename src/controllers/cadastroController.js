@@ -12,7 +12,7 @@ function adicionarUsuario(request, response) {
   const { nome, email, senha } = request.body;
 
   // Adicionando o novo usuario
-  usuarioModels.adicionarUsuario(nome, email, senha);
+  usuarioModels.adicionarUsuario(nome, email, senha, 'user');
   response.redirect('/login');
 }
 

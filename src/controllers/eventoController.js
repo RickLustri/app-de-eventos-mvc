@@ -4,7 +4,7 @@ const eventoModels = require('../models/eventoModel');
 // Criando o controlador de eventos
 async function exibirPaginaEventos(request, response) {
   const eventos = await eventoModels.obterEventos();
-  console.log("Aqui:", eventos)
+  // console.log("Aqui:", eventos)
   response.render('eventos', { eventos });
 
   
